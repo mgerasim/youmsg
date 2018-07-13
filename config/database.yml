@@ -10,10 +10,19 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  min_messages: warning
+  timeout: 5000
+  reconnect: false
+  database: youmsgdev
+  pool: 5
+  username: youmsg
+  password: youmsg
+  socket: /var/lib/mysql/mysql.sock
 
-# Warning: The database defined as "test" will be erased and
+#Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
@@ -21,5 +30,14 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  min_messages: warning
+  timeout: 5000
+  reconnect: false
+  database: youmsg
+  pool: 5
+  username: youmsg
+  password: youmsg
+  socket: /var/lib/mysql/mysql.sock

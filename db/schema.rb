@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180713091830) do
 
-  create_table "activates", force: :cascade do |t|
+  create_table "activates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "code"
     t.string "phone"
     t.string "status"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20180713091830) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "channels", force: :cascade do |t|
+  create_table "channels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "account"
     t.string "name"
     t.datetime "created_at", null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20180713091830) do
     t.string "countrycode"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
