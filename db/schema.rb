@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329000544) do
+ActiveRecord::Schema.define(version: 20180713091830) do
+
+  create_table "activates", force: :cascade do |t|
+    t.integer "code"
+    t.string "phone"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "channels", force: :cascade do |t|
     t.string "account"

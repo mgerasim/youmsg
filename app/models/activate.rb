@@ -1,0 +1,2 @@
+class Activate < ApplicationRecord
+end

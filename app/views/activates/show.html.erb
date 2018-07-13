@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @activate.code %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @activate.phone %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @activate.status %>
+</p>
+
+<%= link_to 'Edit', edit_activate_path(@activate) %> |
+<%= link_to 'Back', activates_path %>
