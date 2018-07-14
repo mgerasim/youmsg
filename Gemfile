@@ -61,3 +61,10 @@ gem 'addressable'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'devise'
+group :development do
+    gem 'capistrano'
+    gem 'capistrano-rbenv'
+    gem 'capistrano-rails'
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma', require: false
+end
