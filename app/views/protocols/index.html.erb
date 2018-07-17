@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Protocols</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Created</th>
+      <th>Msg</th>
+      <th>Activate</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @protocols.each do |protocol| %>
+      <tr>
+        <td><%= protocol.created_at %></td>
+        <td><%= protocol.msg %></td>
+        <td><%= protocol.activate.code %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

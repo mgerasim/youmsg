@@ -2,13 +2,13 @@
 
 <h1>Activates</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Code</th>
       <th>Phone</th>
       <th>Status</th>
-      <th colspan="3"></th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
@@ -18,9 +18,10 @@
         <td><%= activate.code %></td>
         <td><%= activate.phone %></td>
         <td><%= activate.status %></td>
-        <td><%= link_to 'Show', activate %></td>
-        <td><%= link_to 'Edit', edit_activate_path(activate) %></td>
-        <td><%= link_to 'Destroy', activate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показать', activate %></td>
+        <td><%= link_to 'Редактировать', edit_activate_path(activate) %></td>
+        <td><%= link_to 'Удалить', activate, method: :delete, data: { confirm: 'Подтвердить операцию?' } %></td>
+        <td><%= link_to 'Смотреть протокол', activate_protocols_path(activate) %></td>
       </tr>
     <% end %>
   </tbody>

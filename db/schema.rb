@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180713091830) do
+ActiveRecord::Schema.define(version: 20180715140102) do
 
   create_table "activates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "code"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180713091830) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "protocol"
   end
 
   create_table "channels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -29,6 +30,14 @@ ActiveRecord::Schema.define(version: 20180713091830) do
     t.text "protocol"
     t.string "hashpassword"
     t.string "countrycode"
+  end
+
+  create_table "protocols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text "msg"
+    t.bigint "activate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activate_id"], name: "index_protocols_on_activate_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -48,4 +57,5 @@ ActiveRecord::Schema.define(version: 20180713091830) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "protocols", "activates"
 end

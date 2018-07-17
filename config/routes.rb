@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :activates
+  resource :protocols
+  resources :activates do
+      resources :protocols
+  end
+
   resources :channels
   
   get 'home/index'
